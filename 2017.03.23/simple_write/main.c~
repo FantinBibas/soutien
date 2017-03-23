@@ -1,0 +1,11 @@
+int	write_text_in_file(char *file)
+{
+  
+}
+
+int	main(int ac, char **av)
+{
+  if (ac != 2)
+    return (84);
+  return (write_text_in_file(av[1]));
+}
