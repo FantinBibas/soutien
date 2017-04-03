@@ -1,26 +1,24 @@
 ##
-## Makefile<2017.04.03> for Lib_lst in /home/neodar/Epitech/soutien/2017.04.03
+## Makefile for Lib_lst in /home/neodar/Epitech/soutien/2017.04.03
 ## 
 ## Made by Fantin Bibas
 ## Login   <fantin.bibas@epitech.eu@epitech.net>
 ## 
-## Started on  Mon Apr  3 13:57:24 2017 Fantin Bibas
-## Last update Mon Apr  3 14:09:21 2017 Fantin Bibas
+## Started on  Mon Apr  3 13:59:08 2017 Fantin Bibas
+## Last update Mon Apr  3 14:12:16 2017 Fantin Bibas
 ##
 
 CC	=	gcc
 
-AR	=	ar
-
 RM	=	rm -f
 
-NAME	=	liblst.a
+NAME	=	test
 
-FLAGS	=	rc
+FLAGS	=	-L../ -llst
 
-CPPFLAGS =	 -c -I./include/
+CPPFLAGS =	-c -I../include
 
-SRCS	=	src/main.c
+SRCS	=	main.c
 
 OBJDIR	=	objs
 
@@ -33,7 +31,7 @@ $(OBJDIR)/%.o:	%.c
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) $(FLAGS) $(NAME) $(OBJS)
+	$(CC) $(FLAGS) -o $(NAME) $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
