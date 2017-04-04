@@ -3,5 +3,5 @@
 
 t_list	*lstNext(t_list *list)
 {
-  return (list);
+  return (list == NULL ? NULL : list->next);
 }

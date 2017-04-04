@@ -1,44 +1,32 @@
 ##
-## Makefile<2017.04.03> for Lib_lst in /home/neodar/Epitech/soutien/2017.04.03
+## Makefile for  in /home/yannick.suc/CPool_Day10
 ## 
-## Made by Fantin Bibas
-## Login   <fantin.bibas@epitech.eu@epitech.net>
+## Made by suc yannick
+## Login   <yannick.suc@epitech.net>
 ## 
-## Started on  Mon Apr  3 13:57:24 2017 Fantin Bibas
-## Last update Mon Apr  3 14:09:21 2017 Fantin Bibas
+## Started on  Fri Oct 14 08:28:09 2016 suc yannick
+## Last update Mon Apr  3 14:34:05 2017 suc yannick
 ##
 
-CC	=	gcc
+SRC	=	src/lstInsert.c	\
+		src/lstRemove.c
 
-AR	=	ar
+OBJ	=	$(SRC:.c=.o)
 
-RM	=	rm -f
+NAME	=	libmy.a
 
-NAME	=	liblst.a
+CPPFLAGS =	-I./include
 
-FLAGS	=	rc
+all:	$(NAME)
 
-CPPFLAGS =	 -c -I./include/
 
-SRCS	=	src/main.c
-
-OBJDIR	=	objs
-
-OBJS	=	$(SRCS:%.c=$(OBJDIR)/%.o)
-
-$(OBJDIR)/%.o:	%.c
-	mkdir -p $(@D)
-	$(CC) $< -o $@ $(CPPFLAGS)
-
-all: $(NAME)
-
-$(NAME): $(OBJS)
-	$(AR) $(FLAGS) $(NAME) $(OBJS)
+$(NAME):	$(OBJ)
+	ar rc $(NAME) $(OBJ)
 
 clean:
-	$(RM) $(OBJS)
+	rm -f $(OBJ) *~;
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME);
 
 re: fclean all
