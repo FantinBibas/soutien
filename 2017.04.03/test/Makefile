@@ -6,7 +6,7 @@
 ## Login   <fantin.bibas@epitech.eu@epitech.net>
 ## 
 ## Started on  Mon Apr  3 13:59:08 2017 Fantin Bibas
-## Last update Mon Apr  3 14:18:05 2017 suc yannick
+## Last update Wed Apr  5 09:36:40 2017 suc yannick
 ##
 
 CC	=	gcc
@@ -15,9 +15,9 @@ RM	=	rm -f
 
 NAME	=	test
 
-FLAGS	=	-L../ -lmy
+FLAGS	=	-L../ -llst
 
-CPPFLAGS =	-c -I../include -L../ -lmy
+CPPFLAGS =	-c -I../include -L../ -llst
 
 SRCS	=	main.c
 
